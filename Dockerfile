@@ -1,5 +1,4 @@
 FROM registry.access.redhat.com/ubi8/ubi
-USER root
 RUN  yum -y install python3 \
+  && yum clean all -y \
   && pip3 install --upgrade bump2version
-CMD stress $STRESS_ARGS
